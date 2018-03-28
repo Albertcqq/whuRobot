@@ -1,0 +1,9 @@
+<launch>
+<node pkg="armor_detect" type="armor_detect" name="vision"/>
+<node pkg="control" type="control_node" name="control" output="screen"/>
+
+<node pkg="tf" type="static_transform_publisher" name="static_transform_publisher" args="0 0 0 3.14 0 0 base_link laser 100"/>
+<include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+
+
+</launch>
